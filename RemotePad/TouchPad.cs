@@ -25,7 +25,7 @@ namespace RemotePad
 
         public string str;
 
-        void setPos(float x, float y)
+        public void setPos(float x, float y)
         {
 
             xpos = x;

@@ -55,7 +55,24 @@ namespace RemotePad
             rclickArea.SetBackgroundColor(Color.Black);
             moveArea.SetBackgroundColor(Color.White);
 
+            moveArea.Touch += MoveArea_Touch;
+            lclickArea.Touch += LeftArea_Touch;
+        }
 
+        public void MoveArea_Touch(object s, View.TouchEventArgs e)
+        {
+            if (e.Event.Action == MotionEventActions.Down)
+            {
+                tp.setPos(e.Event.GetX(), e.Event.GetY());
+            }
+        }
+
+        public void LeftArea_Touch(object s, View.TouchEventArgs e)
+        {
+            if (e.Event.Action == MotionEventActions.Down)
+            {
+                tp.setPos(e.Event.GetX(), e.Event.GetY());
+            }
         }
     }
 }
